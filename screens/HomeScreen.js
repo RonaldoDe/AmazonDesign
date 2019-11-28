@@ -70,7 +70,7 @@ class HomeScreen extends Component {
                         <Text>Your Recomendations</Text>
                     </CardItem>
                 </Card>
-                    <View style={{width:'100%', flexDirection: 'row',}}>
+                    <View style={{width:'100%', flexDirection: 'row'}}>
                         <CardItemModel
                             itemName='Beautiful'
                             itemCreator='Ronaldo Camacho'
