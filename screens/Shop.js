@@ -22,7 +22,7 @@ class Shop extends Component {
             </Right>
           </Header>
             <View>
-                <Text>Kik es la verga</Text>
+                <Text >Shop</Text>
             </View>
         </Container>
     );

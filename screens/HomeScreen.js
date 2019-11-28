@@ -6,7 +6,7 @@ import { Container, Content, Header, Left, Right, Icon, Item, Input, Card, CardI
 import FAIcon from 'react-native-vector-icons/FontAwesome';
 import Swiper from 'react-native-swiper';
 
-import RecommendedCardItem from '../components/RecommendedCardItem';
+import CardItemModel from '../components/CardItemModel';
 
 class HomeScreen extends Component {
   render() {
@@ -18,7 +18,7 @@ class HomeScreen extends Component {
                 {/* <FAIcon name='amazon' style={{fontSize:32, color:'white'}}></FAIcon>  */}
             </Left>
             <Right>
-                <Icon name='md-cart' style={{color:'white'}}></Icon>
+                <Icon name='md-cart' style={{color:'white'}} onPress={()=>this.props.navigation.navigate('Shop')}></Icon>
             </Right>
           </Header>
           <View style={{ position:'absolute', left:0, right:0, top:90, height:70, backgroundColor:'#3a455c', flexDirection: 'row', alignItems:'center', paddingHorizontal:5}}>
@@ -39,13 +39,13 @@ class HomeScreen extends Component {
           </View>
 
             <Content style={{backgroundColor:'white', marginTop:70}}>
-                <View style={{height:50, backgroundColor:'white', flexDirection:'row', paddingHorizontal:5, alignItems:'center', justifyContent:'space-between'}}>
+                {/*<View style={{height:50, backgroundColor:'white', flexDirection:'row', paddingHorizontal:5, alignItems:'center', justifyContent:'space-between'}}>
                     <Text>Hello, Ronaldo Camacho</Text>
                     <View style={{flexDirection:'row'}}>
                         <Text>Your Account </Text>
                         <Icon name='arrow-forward' style={{fontSize:18}}></Icon>
                     </View>
-                </View>
+    </View>*/}
 
                 <Swiper 
                     style={{height:100}}
@@ -65,48 +65,48 @@ class HomeScreen extends Component {
                     </View>
                 </Swiper>
 
-                <Card style={{marginLeft:5, marginRight:5}}>
-                    <CardItem header style={{borderBottomWidth:1, borderBottomColor:'#dee0e2'}}>
+                <Card noShadow style={{marginLeft:5, marginRight:5, alignItems:'center'}}>
+                    <CardItem header>
                         <Text>Your Recomendations</Text>
                     </CardItem>
-
-                    <RecommendedCardItem 
-                        itemName='Beautiful'
-                        itemCreator='Ronaldo Camacho'
-                        itemPrice='$20'
-                        savings='2.5'
-                        imageUri={require('../assets/recommended/GfQfcUJ.png')}
-                        rating={4.5}
-                    />
-
-                    <RecommendedCardItem        
-                        itemName='Finger print'
-                        itemCreator='Ronaldo Camacho'
-                        itemPrice='$50'
-                        savings='2.5'
-                        imageUri={require('../assets/recommended/LOGO-negro-250x250px-FINAL.png')}
-                        rating={3.5}
-                    />
-
-                    <RecommendedCardItem 
-                        itemName='Fozy'
-                        itemCreator='Ronaldo Camacho'
-                        itemPrice='$30'
-                        savings='2.5'
-                        imageUri={require('../assets/recommended/Png-250x250px--..png')}
-                        rating={2}
-                    />
-
-                    <RecommendedCardItem 
-                        itemName='Witch'
-                        itemCreator='Ronaldo Camacho'
-                        itemPrice='$10'
-                        savings='2.5'
-                        imageUri={require('../assets/recommended/tumblr_oed1302TVB1vnqjx7o1_250.png')}
-                        rating={3.5}
-                    />
-
                 </Card>
+                    <View style={{width:'100%', flexDirection: 'row',}}>
+                        <CardItemModel
+                            itemName='Beautiful'
+                            itemCreator='Ronaldo Camacho'
+                            itemPrice='$20'
+                            savings='2.5'
+                            imageUri={require('../assets/recommended/GfQfcUJ.png')}
+                            rating={4.5}
+                        />
+
+                        <CardItemModel  
+                            itemName='Finger print'
+                            itemCreator='Ronaldo Camacho'
+                            itemPrice='$50'
+                            savings='2.5'
+                            imageUri={require('../assets/recommended/LOGO-negro-250x250px-FINAL.png')}
+                            rating={3.5}
+                        />
+
+                    </View>
+                    <CardItemModel
+                            itemName='Fozy'
+                            itemCreator='Ronaldo Camacho'
+                            itemPrice='$30'
+                            savings='2.5'
+                            imageUri={require('../assets/recommended/Png-250x250px--..png')}
+                            rating={2}
+                        />
+
+                        <CardItemModel
+                            itemName='Witch'
+                            itemCreator='Ronaldo Camacho'
+                            itemPrice='$10'
+                            savings='2.5'
+                            imageUri={require('../assets/recommended/tumblr_oed1302TVB1vnqjx7o1_250.png')}
+                            rating={3.5}
+                        />
 
             </Content>
 
