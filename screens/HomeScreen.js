@@ -17,7 +17,7 @@ class HomeScreen extends Component {
         this.state = {
             loading:false,
             products:[],
-            url:'https://pokeapi.co/api/v2/pokemon/'
+            url:'https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20'
         }
 
     }
@@ -118,7 +118,7 @@ class HomeScreen extends Component {
                                     imageUri={require('../assets/category/acces.png')}
                                 />
                                 <CategoryItem 
-                                    name='sadsafsger ger hgdr g'
+                                    name='sadsafsger ger hgdr gfd ng'
                                     imageUri={require('../assets/category/acces.png')}
                                 />
                                 <CategoryItem 
@@ -139,7 +139,7 @@ class HomeScreen extends Component {
                             <Text style={{fontWeight:'bold'}}>Your Recomendations</Text>
                         </CardItem>
                     </Card> */}
-                        <View style={{width:'100%', flexDirection: 'row', paddingHorizontal:2, alignItems:'center', justifyContent:'space-around'}}>
+                        <View style={{width:'100%', flexDirection: 'column', paddingHorizontal:2, alignItems:'center', justifyContent:'space-around',}}>
 
                             {this.state.products.map((val, key) => {
                                 return ( 
