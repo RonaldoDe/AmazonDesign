@@ -22,10 +22,10 @@ class App extends React.Component {
 const CustomDraweContentComponent = (props) =>{
   return(
     <Container>
-      <Header style={[{backgroundColor:'#3a455c', height: 90}, styles.androidHeader]}>
+      <Header style={[{backgroundColor:'#fafafa', height: 90}, styles.androidHeader]}>
         <Left style={{flex:1, flexDirection: 'row', alignItems:'center'}}>
-          <Icon name='person' style={{color:'white'}} />
-          <Text style={{marginLeft:5, fontSize:22, color:'white', fontStyle:'italic'}}>Hello, Ronaldo</Text>
+          <Icon name='person' style={{color:'#212121'}} />
+          <Text style={{marginLeft:5, fontSize:22, color:'#212121', fontStyle:'normal'}}>Hello, Ronaldo</Text>
         </Left>
       </Header>
       <Content>
