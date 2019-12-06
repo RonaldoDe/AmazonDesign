@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Platform, StatusBar, ScrollView} from 'react-native';
+import { View, Text, StyleSheet, Platform, StatusBar, ScrollView, FlatList} from 'react-native';
 
 import { Container, Content, Header, Left, Right, Icon, Item, Input, Card, CardItem} from 'native-base';
 
@@ -17,7 +17,7 @@ class HomeScreen extends Component {
         this.state = {
             loading:false,
             products:[],
-            url:'https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20'
+            url:'https://pokeapi.co/api/v2/pokemon/?offset=20&limit=10'
         }
 
     }
@@ -141,20 +141,33 @@ class HomeScreen extends Component {
                     </Card> */}
                         <View style={{width:'100%', flexDirection: 'column', paddingHorizontal:2, alignItems:'center', justifyContent:'space-around',}}>
 
-                            {this.state.products.map((val, key) => {
-                                return ( 
-                                    <CardItemModel key={key}
-                                    itemName={val.name}
+                                    {// <CardItemModel key={key}
+                                    // itemName={val.name}
+                                    // itemCreator='Ronaldo Camacho'
+                                    // itemPrice='$20'
+                                    // savings='2.5'
+                                    // imageUri={require('../assets/recommended/GfQfcUJ.png')}
+                                    // rating={4.5}
+                                    // />}
+
+                                    <FlatList
+                                    style={{flex:1}}
+                                    data={this.state.products}
+                                    keyExtractor = {(item, index) => item.name}
+                                    renderItem={({item}) => <CardItemModel key={item.url}
+                                    itemName={item.name}
                                     itemCreator='Ronaldo Camacho'
                                     itemPrice='$20'
                                     savings='2.5'
-                                    imageUri={require('../assets/recommended/GfQfcUJ.png')}
+                                    imageUri={require('../assets/category/acces.png')}
                                     rating={4.5}
+                                    
+                                    />}
+                                    numColumns={2}
                                     />
                                     
-                                );
                             
-                            })}
+                      }
                             {/* <CardItemModel
                                 itemName='Beautiful'
                                 itemCreator='Ronaldo Camacho'

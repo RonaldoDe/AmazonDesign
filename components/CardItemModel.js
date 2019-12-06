@@ -39,10 +39,8 @@ class CardItemModel extends Component {
             </Left> */}
             <Body style={{padding:5}}>
               <Text style={{fontSize:14, fontWeight:'bold', color:'#212121', fontStyle:'italic'}}>{this.props.itemName}</Text>
-            </Body>
-            <Right style={{padding:5}}>
               <Text>Precio: <Text style={{fontSize:14, fontWeight:'bold', color:'#c4402f'}}>{this.props.itemPrice}</Text></Text>
-            </Right>
+            </Body>
           </View>
         </TouchableOpacity>
       </Card>
@@ -55,21 +53,31 @@ export default CardItemModel;
 
 const styles = StyleSheet.create({
     container:{
-      width:'47%', 
       marginBottom:8,
-      borderLeftWidth:0.4,
-      borderRightWidth:0.4,
-      borderTopWidth:0.4,
-      borderBottomWidth:0.4,
-      borderColor:'#E0E0E0'
+      borderLeftWidth:0,
+      borderRightWidth:0,
+      borderTopWidth:0,
+      borderBottomWidth:0,
+      flexBasis:'47%',
+      padding:8
     },
     cardBo:{
       borderTopLeftRadius:8,
       borderTopRightRadius:8,
+      borderColor:'#E0E0E0',
+      borderLeftWidth:0.4,
+      borderRightWidth:0.4,
+      borderTopWidth:0.4,
+      borderBottomWidth:0,
     },
     cardFooter:{
      backgroundColor:'rgba(0, 0, 0, 0.020)',
      borderBottomLeftRadius:8,
      borderBottomRightRadius:8,
+     borderColor:'#E0E0E0',
+     borderLeftWidth:0.4,
+    borderRightWidth:0.4,
+    borderTopWidth:0,
+    borderBottomWidth:0.4,
     }
 });
